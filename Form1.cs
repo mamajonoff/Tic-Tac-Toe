@@ -10,6 +10,8 @@ namespace Tic_Tac_Toe
         Turn turn = Turn.Player1;
         byte count = 0;
         bool GameOver = false;
+        byte countX = 0;
+        byte countO = 0;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,10 +38,14 @@ namespace Tic_Tac_Toe
                 if (turn == Turn.Player1)
                 {
                     MessageBox.Show(Turn.Player2.ToString() + " win!");
+                    countO++;
+                    label4.Text = "O: " + countO;
                 }
                 else
                 {
                     MessageBox.Show(Turn.Player1.ToString() + " win!");
+                    countX++;
+                    label3.Text = "X: " + countX;
                 }
                 GameOver = true;
             }
